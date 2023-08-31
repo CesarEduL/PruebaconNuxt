@@ -4,7 +4,7 @@
 
 ```bash
 # Instalar dependencias
-$ npm installg
+$ npm install
 
 # Servir con recarga en caliente en localhost:3000
 $ npm run dev
@@ -21,11 +21,12 @@ $ npm run generate
 ```bash
 #Si en algún momento del proceso sale un menú que no deja avanzar, solo se debe poner :q para salir
 
-# Instalar Git
+# Instalar o reiniciar Git
 $ git init
 
-# Vincularlo al repositorio
+# Vincularlo y desvincularlo al repositorio
 $ git remote add origin "nombre del repositorio en GitHub"
+$ git remote rm origin
 
 # Nos muestra en que repositorio estamos enlazados remotamente.
 $ git remote -v
@@ -37,36 +38,8 @@ $ git status -s # se puede agregar -b para ver la rama a la que pertenece
 # Añadir todos los cambios o cambios en un archivo específico
 $ git add .  # o $ git add "nombredelarchivo"
 
-# Verificar los archivos nuevamente o solo los archivos modificados
-$ git status
-$ git status -s # se puede agregar -b para ver la rama a la que pertenece
-
 # Crear un cambio con una descripción
 $ git commit -m "<CAMBIOS DEL COMMIT>"
-
-# Guardar los cambios en el commit actual y subirlos
-$ git commit --amend --no-edit # si queremos modificar el mensaje del commit solo ponemos $ git commit --amend -m "descripción"
-
-# Subir los cambios (commits) o establecer el upstream si es un proyecto nuevo
-$ git push  # o $ git push --set-upstream origin master
-
-# Ver los commits creados actuales o en general
-$ git log --oneline 
-$ git log --graph --oneline
-$ git reflog
-
-# Para hacer un commit en otra rama 
-$ git log --oneline master.."nombredelarama"
-
-# Mostrar las ramas del proyecto o del remoto
-$ git branch
-$ git branch -a
-
-# Cambiar de rama del proyecto
-$ git checkout "nombredelarama"
-
-# Retroceder a un commit específico
-$ git reset --hard "códigodelcommit"
 
 # Deshacer el último commit manteniendo y sin mantener los cambios en el área de preparación
 $ git reset --soft HEAD^
@@ -77,20 +50,66 @@ $ git rebase -i "codigodelcommitanterioralqueseeliminará (puede ser encontrado 
 $ git rebase --continue
 $ git push origin "nombredelarama" --force
 
+# Guardar los cambios en el commit actual y subirlos
+$ git commit --amend --no-edit # si queremos modificar el mensaje del commit solo ponemos $ git commit --amend -m "descripción"
+
+# Subir los cambios (commits) o establecer el upstream si es un proyecto nuevo
+$ git push  # o $ git push --set-upstream origin master
+
+# Si no te deja usar push debido a un error con el destiempo con la contraparte remota, se hacen estos dos comandos
+$ git pull origin master --allow-unrelated-histories
+$ git push -u origin master
+
+# Ver los commits creados actuales o en general
+$ git log --oneline 
+$ git log --graph --oneline
+$ git reflog
+
+# Borrar todo de una rama
+$ git push origin +master --force
+
+# Para hacer un commit en otra rama 
+$ git log --oneline master.."nombredelarama"
+
+# Mostrar las ramas del proyecto o del remoto
+$ git branch # si creamos una nueva rama tenemos $ git branch "nombredelanuevarama"
+$ git branch -a
+
+# Atajo para crear y moverse a una nueva rama
+$ git checkout -b nuevaRama
+
+# Cambiar de rama del proyecto
+$ git checkout "nombredelarama"
+
+# Para fusionar ramas debemos estar en la rama que espera los cambios
+$ git merge "nombreRama"
+
+# Eliminamos una rama
+$ git branch -d "nombreRama"
+
+# Retroceder a un commit específico
+$ git reset --hard "códigodelcommit"
+
 # Obtener archivos de GitHub para nuestro repositorio local
 $ git pull
 
-#Crear tags con Versiones de la aplicación
+# Crear tags con Versiones de la aplicación
 $ git tag "nombre de la versión" -m "Descripción de la versión"
 
-#Subir o actualizar a Github el tag creado
-$ git push --tag 
-
-#Ver los tags creados
+# Ver los tags creados
 $ git tag
 
-#Borrar tags
+# Subir o actualizar a Github el tag creado
+$ git push --tag 
+
+# Mostrar información del tag
+$ git show "nombredeltag"
+
+# Borrar tags
 $ git tag -d "Nombre de la versión"
+
+# Hacer una versión en un commit anterior
+$ git tag -a "nombredeltag" "codigo del commit" -m "Nombre de la versión"
 
 ```
 

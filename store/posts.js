@@ -1,31 +1,37 @@
 //State
 export const state = () => ({
-    _posts: []
-})
+  _posts: [],
+});
 
 //Actions
 export const actions = {
-    async loadPosts({ commit }) {
-        //Obtener los post
-        let { data } = await this.$axios.get('https://jsonplaceholder.typicode.com/posts');
+  async loadPosts({ commit }) {
+    //Obtener los post
+    let { data } = await this.$axios.get(
+      "https://jsonplaceholder.typicode.com/posts"
+    );
 
-        console.log(data);
+    console.log(data);
 
-        //Realisar un commit
-        commit('setPosts', data);
-    }
-}
+    //Realisar un commit
+    commit("setPosts", data);
+  },
+};
 
 //Getters
 export const getters = {
-    getPosts(state) {
-        return state._posts
-    }
-}
+  getPosts(state) {
+    return state._posts;
+  },
 
-//Mutaciones 
+  getTotal(state) {
+    return state._posts.length;
+  },
+};
+
+//Mutaciones
 export const mutations = {
-    setPosts(state, posts) {
-        state._posts = posts
-}
-}
+  setPosts(state, posts) {
+    state._posts = posts;
+  },
+};

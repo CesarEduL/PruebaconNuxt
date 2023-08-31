@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h1>Blog</h1>
+        <h1>Blog, total: {{ total }}</h1>
         <div v-for="post in posts" :key="post.id">
             <h1>{{ post.title }}</h1>
             <p>{{ post.body }}</p>
@@ -9,14 +9,31 @@
 </template>
 
 <script>
+import { mapGetters, mapActions, mapMutations } from 'vuex'
+
 export default {
-    created() {
-        this.$store.dispatch('posts/loadPosts');
+    // Se puede exportar directamente desde la página o mediante el store
+
+    //created() {
+    //    this.$store.dispatch('posts/loadPosts');
+    // },
+
+    methods: {
+        ...mapActions({
+            loadPosts: "posts/loadPosts"
+        })
     },
+
     computed: {
-        posts() {
-            return this.$store.getters['posts/getPosts']
-        }
+        //Una forma de poner los post
+        //posts() {
+        //    return this.$store.getters['posts/getPosts']
+        //}
+
+        ...mapGetters({
+            posts: 'posts/getPosts',
+            total: 'posts/getTotal'
+        })
     }
 }
 </script>
