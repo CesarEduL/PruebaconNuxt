@@ -31,8 +31,8 @@ export const actions = {
   },
 };
 
-//Mutadores
-//Unico fin de los mutadores es mutar o modificar el state o almacenamiento
+// Mutadores
+// Unico fin de los mutadores es mutar o modificar el state o almacenamiento
 export const mutations = {
   increment(state) {
     state._counter++;
