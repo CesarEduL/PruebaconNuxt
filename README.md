@@ -56,9 +56,7 @@ $ git commit --amend --no-edit # si queremos modificar el mensaje del commit sol
 # Subir los cambios (commits) o establecer el upstream si es un proyecto nuevo
 $ git push  # o $ git push --set-upstream origin master
 
-# Si no te deja usar push debido a un error con el destiempo con la contraparte remota, se hacen estos dos comandos
-$ git pull origin master --allow-unrelated-histories
-$ git push -u origin master
+# Si no te deja usar push debido a un error con el destiempo con la contraparte remota, solo crea un nuevo commit
 
 # Ver los commits creados actuales o en general
 $ git log --oneline 
