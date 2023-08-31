@@ -57,13 +57,12 @@ $ git commit --amend --no-edit # si queremos modificar el mensaje del commit sol
 $ git push  # o $ git push --set-upstream origin master
 
 # Si no te deja usar push debido a un error con el destiempo con la contraparte remota, se hacen estos dos comandos
-$ git pull origin master --allow-unrelated-histories
-$ git push -u origin master
+$ git fetch origin main:tmp
+$ git rebase tmp
+$ git push origin HEAD:main
 
 # Ver los commits creados actuales o en general
-$ git log --oneline 
-$ git log --graph --oneline
-$ git reflog
+
 
 # Borrar todo de una rama
 $ git push origin +master --force
