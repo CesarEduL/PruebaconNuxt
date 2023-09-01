@@ -11,20 +11,24 @@ export default {
       { hid: "description", name: "description", content: "" },
       { name: "format-detection", content: "telephone=no" },
     ],
-    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
+    link: [{ rel: "icon", type: "image/x-icon", href: "/logoempresacircularico.ico" }],
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
     // CSS file in the project
     "@/assets/css/main.css",
+    "@/assets/css/footer.css",
     // Boxicons
     "boxicons/css/boxicons.min.css",
+    // Bootstrap
+    "~/node_modules/bootstrap/dist/css/bootstrap.min.css",
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    { src: "~/plugins/navbar.js", mode: "client" }
+    { src: "~/plugins/navbar.js", mode: "client" },
+    { src: "~/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js", mode: "client" },
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components

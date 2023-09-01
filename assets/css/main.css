@@ -15,8 +15,12 @@
   --nav-color: #4070f4;
   --side-nav: #010718;
   --text-color: #fff;
+  --text-color-content: #707070;
   --search-bar: #f2f2f2;
   --search-text: #010718;
+  --button-color: #eb2f06;
+  --link-transition: #b8ff4fea;
+  --ying-yang: #010718;
 }
 
 body {
@@ -29,7 +33,11 @@ body.dark {
   --nav-color: #242526;
   --side-nav: #242526;
   --text-color: #ccc;
+  --text-color-content: #b9b9b9;
   --search-bar: #242526;
+  --button-color: #eb8406;
+    --link-transition: #0D6EFD;
+  --ying-yang: #fff;
 }
 
 nav {
@@ -61,6 +69,7 @@ nav .nav-bar {
 
 nav .nav-bar .sidebarOpen {
   color: var(--text-color);
+  font-weight: 600;
   font-size: 25px;
   padding: 5px;
   cursor: pointer;
@@ -69,7 +78,7 @@ nav .nav-bar .sidebarOpen {
 
 nav .nav-bar .logo a {
   font-size: 25px;
-  font-weight: 500;
+  font-weight: 600;
   color: var(--text-color);
   text-decoration: none;
 }
@@ -91,7 +100,7 @@ nav .nav-bar .logo a {
 .nav-links li a {
   position: relative;
   font-size: 17px;
-  font-weight: 400;
+  font-weight: 500;
   color: var(--text-color);
   text-decoration: none;
   padding: 10px;
@@ -134,6 +143,7 @@ nav .nav-bar .logo a {
 .searchToggle i {
   position: absolute;
   color: var(--text-color);
+  font-weight: 200;
   font-size: 22px;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -216,7 +226,7 @@ nav .nav-bar .logo a {
   border: none;
   border-radius: 4px;
   font-size: 14px;
-  font-weight: 400;
+  font-weight: 500;
   color: var(--search-text);
   background-color: var(--search-bar);
 }
@@ -235,6 +245,7 @@ body.dark .search-field input {
 
 body.dark .search-field i {
   color: var(--text-color);
+  font-weight: 200;
 }
 
 @media (max-width: 790px) {
@@ -288,18 +299,19 @@ body.dark .search-field i {
   }
 }
 
+/* ===== Content ===== */
 .home {
   height: 100vh;
-  margin-top: 100px;
+  padding-top: 80px;
   left: 90px;
-  width: calc(100% - 250px);
+  width: (100% - 250px);
   background: var(--body-color);
-  transition: var(--tran-05);
+  transition: all 0.4s ease;
 }
 
 .home .text {
   font-size: 30px;
   font-weight: 500;
-  color: var(--text-color);
+  color: var(--text-color-content);
   padding: 8px 40px;
 }

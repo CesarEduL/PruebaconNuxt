@@ -2,11 +2,11 @@
     <nav>
         <div class="nav-bar">
             <i class="bx bx-menu sidebarOpen"></i>
-            <span class="logo navLogo"><nuxt-link to="/">CodingLab</nuxt-link></span>
+            <span class="logo navLogo"><nuxt-link to="/">CompuPost</nuxt-link></span>
 
             <div class="menu">
                 <div class="logo-toggle">
-                    <span class="logo"><nuxt-link to="/">CodingLab</nuxt-link></span>
+                    <span class="logo"><nuxt-link to="/">CompuPost</nuxt-link></span>
                     <i class="bx bx-x siderbarClose"></i>
                 </div>
 
