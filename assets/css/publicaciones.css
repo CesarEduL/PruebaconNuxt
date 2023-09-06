@@ -1,0 +1,51 @@
+/* Estilos para las publicaciones */
+.publicaciones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding-top: 10px;
+}
+
+/* Estilos para cada publicación */
+.publicaciones div {
+  background-color: var(--post-color);
+  padding: 10px;
+  border: 1px solid var(--button-color);
+  border-radius: 4px;
+  width: calc(33.33% - 20px); /* Para dividir en tres columnas */
+}
+
+/* Estilos para el título de la publicación */
+.publicaciones div h1 {
+  font-size: 25px;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+/* Estilos para el cuerpo de la publicación */
+.publicaciones div p {
+  font-size: 14px;
+  color: var(--text-color);
+}
+
+/* Estilos para pantallas pequeñas (ancho máximo de 767px) */
+@media (max-width: 767px) {
+  /* Modifica los estilos según el ancho de la pantalla */
+  .publicaciones div {
+    width: 100%; /* Ocupa todo el ancho disponible */
+  }
+}
+
+/* Estilos para pantallas medianas (ancho entre 768px y 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .publicaciones div {
+    width: calc(50% - 20px); /* Divide en dos columnas con margen */
+  }
+}
+
+/* Estilos para pantallas grandes (ancho mayor o igual a 1024px) */
+@media (min-width: 1024px) {
+  .publicaciones div {
+    width: calc(33.33% - 20px); /* Divide en tres columnas con margen */
+  }
+}

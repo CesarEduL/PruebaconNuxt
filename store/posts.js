@@ -11,7 +11,8 @@ export const actions = {
       "https://jsonplaceholder.typicode.com/posts"
     );
 
-    console.log(data);
+    //Imprimir en consola
+    //console.log(data);
 
     //Realisar un commit
     commit("setPosts", data);

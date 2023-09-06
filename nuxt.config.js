@@ -19,6 +19,7 @@ export default {
     // CSS file in the project
     "@/assets/css/main.css",
     "@/assets/css/footer.css",
+    "@/assets/css/publicaciones.css",
     // Boxicons
     "boxicons/css/boxicons.min.css",
     // Bootstrap

@@ -21,5 +21,7 @@ export default {
       return this.$store.getters["getCounter"];
     },
   },
+
+
 };
 </script>
